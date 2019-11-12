@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: small
+spec:
+  hard:
+    pods: 5
+    requests.cpu: "2"
+    requests.memory: "8Gi"
+    requests.ephemeral-storage: "2Gi"
+    limits.cpu: "2"
+    limits.memory: "8Gi"
+    limits.ephemeral-storage: "2Gi"
+  scopes:
+  - NotTerminating

@@ -1,0 +1,55 @@
+apiVersion: authorization.openshift.io/v1
+groupNames:
+- system:serviceaccounts:${PROJECT_NAME}
+kind: RoleBinding
+metadata:
+  creationTimestamp: null
+  name: system:image-pullers
+roleRef:
+  name: system:image-puller
+subjects:
+- kind: SystemGroup
+  name: system:serviceaccounts:${PROJECT_NAME}
+userNames: null
+---
+apiVersion: authorization.openshift.io/v1
+groupNames: null
+kind: RoleBinding
+metadata:
+  creationTimestamp: null
+  name: system:image-builders
+roleRef:
+  name: system:image-builder
+subjects:
+- kind: ServiceAccount
+  name: builder
+userNames:
+- system:serviceaccount:${PROJECT_NAME}:builder
+---
+apiVersion: authorization.openshift.io/v1
+groupNames: null
+kind: RoleBinding
+metadata:
+  creationTimestamp: null
+  name: system:deployers
+roleRef:
+  name: system:deployer
+subjects:
+- kind: ServiceAccount
+  name: deployer
+userNames:
+- system:serviceaccount:${PROJECT_NAME}:deployer
+---
+apiVersion: authorization.openshift.io/v1
+groupNames: null
+kind: RoleBinding
+metadata:
+  creationTimestamp: null
+  name: admin
+roleRef:
+  name: admin
+subjects:
+- kind: User
+  name: ${PROJECT_ADMIN_USER}
+userNames:
+- ${PROJECT_ADMIN_USER}

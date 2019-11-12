@@ -1,0 +1,10 @@
+resources:
+- default-project-template.yaml
+
+namespace: ${PROJECT_NAME}
+
+commonAnnotations:
+  openshift.io/description: ${PROJECT_DESCRIPTION}
+  openshift.io/display-name: ${PROJECT_DISPLAYNAME}
+  openshift.io/requester: ${PROJECT_REQUESTOR}
+  openshift.io/admin: ${PROJECT_ADMIN}

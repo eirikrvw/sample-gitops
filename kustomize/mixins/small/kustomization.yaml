@@ -1,0 +1,9 @@
+resources:
+- quota.yaml
+- core-object-count.yaml
+
+commonAnnotations:
+  openshift.io/quota-tier: Small
+
+commonLabels:
+  quota-tier: Small

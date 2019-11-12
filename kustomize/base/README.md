@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/redhat-cop/openshift-toolkit/master/quota-management/files/default-project-template.yaml

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: core-object-count
+spec:
+  hard:
+    persistentvolumeclaim: "0"
+    replicationcontrollers: "5"
+    resourcequota: "3"
+    secrets: "10"
+    services: "5"
+    openshift.io/imagestreams: "5"
+    configmaps: "10"
